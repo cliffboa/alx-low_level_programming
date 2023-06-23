@@ -9,29 +9,29 @@
  */
 long largest_prime_factor(long n)
 {
-    long i, max_prime;
+	long i, max_prime;
 
-    max_prime = -1;
+	max_prime = -1;
 
-    while (n % 2 == 0)
-    {
-        max_prime = 2;
-        n /= 2;
-    }
+	while (n % 2 == 0)
+	{
+		max_prime = 2;
+		n /= 2;
+	}
 
-    for (i = 3; i <= sqrt(n); i += 2)
-    {
-        while (n % i == 0)
-        {
-            max_prime = i;
-            n /= i;
-        }
-    }
+	for (i = 3; i <= sqrt(n); i += 2)
+	{
+		while (n % i == 0)
+		{
+			max_prime = i;
+			n /= i;
+		}
+	}
 
-    if (n > 2)
-        max_prime = n;
+	if (n > 2)
+		max_prime = n;
 
-    return max_prime;
+	return max_prime;
 }
 
 /**
@@ -41,13 +41,13 @@ long largest_prime_factor(long n)
  */
 int main(void)
 {
-    long number = 612852475143;
-    long largest_prime;
+	long number = 612852475143;
+	long largest_prime;
 
-    largest_prime = largest_prime_factor(number);
+	largest_prime = largest_prime_factor(number);
 
-    printf("%ld\n", largest_prime);
+	printf("%ld\n", largest_prime);
 
-    return 0;
+	return 0;
 }
 
