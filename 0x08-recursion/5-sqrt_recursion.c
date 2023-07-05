@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * sqrt_helper - Recursive helper function to calculate the square root
  * @n: The number to calculate the square root of
@@ -17,7 +15,9 @@ int sqrt_helper(int n, int i);
  */
 int _sqrt_recursion(int n)
 {
-    return (sqrt_helper(n, 0));
+	if (n < 0)
+		return (-1);
+	return (sqrt_helper(n, 0));
 }
 
 /**
@@ -29,10 +29,10 @@ int _sqrt_recursion(int n)
  */
 int sqrt_helper(int n, int i)
 {
-    if (i * i > n)
-        return (-1);
-    if (i * i == n)
-        return (i);
-    return (sqrt_helper(n, i + 1));
+	if (i * i > n)
+		return (-1);
+	if (i * i == n)
+		return (i);
+	return (sqrt_helper(n, i + 1));
 }
 
